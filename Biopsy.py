@@ -9,6 +9,7 @@ def GetImage(path,level):
     oslideimg = openslide.OpenSlide(path)
     print(type(oslideimg))
     print(oslideimg.dimensions)
+    print(oslideimg.level_dimensions[0])
     print(oslideimg.level_dimensions[1])
     print(oslideimg.level_dimensions[2])
     print(oslideimg.level_dimensions[3])
