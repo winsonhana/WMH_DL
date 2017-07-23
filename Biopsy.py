@@ -19,5 +19,7 @@ def CropImageRatio(image_in,w_min,h_min,w_max,h_max):
     h1, h2 = int(h_min*hd + 0.5), int(h_max*hd + 0.5)
     return image_in.crop((w1,h1,w2,h2))
     
-img, attr = GetImage('./Tumor_001_Mask.tif')
+img, attr = GetImage('./Tumor_001_Mask.tif',2)
+print(type(img))
+print(img.shape)
 #PIL.Image.Image.save()
