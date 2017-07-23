@@ -20,22 +20,22 @@ def CropImageRatio(image_in,w_min,h_min,w_max,h_max):
     return image_in.crop((w1,h1,w2,h2))
 
 
-path = "/home/data/CAMELYON16/TrainingData/Train_Tumor/Tumor_002.tif"
+path = "/home/data/CAMELYON16/TrainingData/Train_Tumor/Tumor_054.tif"
 #path = "/home/data/CAMELYON16/TrainingData/Ground_Truth/Mask/Tumor_002_Mask.tif"
 #img, attr = GetImage('./Tumor_002_Mask.tif',1) # THROW ERROR INTEGER OVERFLOW
 img, attr = GetImage(path,6)
 print(type(img))
 print(img.height)
 print(img.width)
-img.save('Tumor002_6.tif')
+img.save('Tumor054_6.tif')
 
 
-path = "/home/data/CAMELYON16/TrainingData/Ground_Truth/Mask/Tumor_002_Mask.tif"
+path = "/home/data/CAMELYON16/TrainingData/Ground_Truth/Mask/Tumor_054_Mask.tif"
 img, attr = GetImage(path,6)
 print(type(img))
 print(img.height)
 print(img.width)
-img.save('Mask002_6.tif')
+img.save('Mask054_6.tif')
 
 
 # LEGEND
