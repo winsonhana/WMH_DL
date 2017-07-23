@@ -9,6 +9,9 @@ def GetImage(path,level):
     oslideimg = openslide.OpenSlide(path)
     print(type(oslideimg))
     print(oslideimg.dimensions)
+    print(oslideimg.level_dimensions[1])
+    print(oslideimg.level_dimensions[2])
+    print(oslideimg.level_dimensions[3])
     assert (level < oslideimg.level_count), "level > level_count"
     img = oslideimg.read_region((0,0),level%oslideimg.level_count,oslideimg.level_dimensions[level])
     attr = [(oslideimg.level_dimensions[ll],oslideimg.level_downsamples[ll]) for ll in range(0,oslideimg.level_count)]
