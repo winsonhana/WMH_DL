@@ -7,6 +7,8 @@ import openslide
 
 def GetImage(path,level):
     oslideimg = openslide.OpenSlide(path)
+    print(type(oslideimg))
+    print(oslideimg.dimensions)
     assert (level < oslideimg.level_count), "level > level_count"
     img = oslideimg.read_region((0,0),level%oslideimg.level_count,oslideimg.level_dimensions[level])
     attr = [(oslideimg.level_dimensions[ll],oslideimg.level_downsamples[ll]) for ll in range(0,oslideimg.level_count)]
@@ -23,7 +25,7 @@ def CropImageRatio(image_in,w_min,h_min,w_max,h_max):
 path = "/home/data/CAMELYON16/TrainingData/Train_Tumor/Tumor_054.tif"
 #path = "/home/data/CAMELYON16/TrainingData/Ground_Truth/Mask/Tumor_002_Mask.tif"
 #img, attr = GetImage('./Tumor_002_Mask.tif',1) # THROW ERROR INTEGER OVERFLOW
-img, attr = GetImage(path,3)
+img, attr = GetImage(path,6)
 print(type(img))
 print(img.height)
 print(img.width)
@@ -31,7 +33,7 @@ img.save('Tumor054_6.tif')
 
 
 path = "/home/data/CAMELYON16/TrainingData/Ground_Truth/Mask/Tumor_054_Mask.tif"
-img, attr = GetImage(path,3)
+img, attr = GetImage(path,6)
 print(type(img))
 print(img.height)
 print(img.width)
