@@ -24,5 +24,5 @@ print(type(img))
 print(img.height)
 print(img.width)
 
-img.save('Mask','tiff')
+img.save('Mask','png')
 #PIL.Image.Image.save()
