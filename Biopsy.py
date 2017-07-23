@@ -16,7 +16,8 @@ def GetImage(path,level):
     print(oslideimg.level_count)
     print(level%oslideimg.level_count)
     assert (level < oslideimg.level_count), "level > level_count"
-    img = oslideimg.read_region((0,0),level%oslideimg.level_count,oslideimg.level_dimensions[level])
+    #img = oslideimg.read_region((0,0),level%oslideimg.level_count,oslideimg.level_dimensions[level])
+    img = oslideimg.read_region((0,30000),1,(15000,25000 ))
     attr = [(oslideimg.level_dimensions[ll],oslideimg.level_downsamples[ll]) for ll in range(0,oslideimg.level_count)]
     return img, attr
 
