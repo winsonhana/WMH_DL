@@ -13,6 +13,8 @@ def GetImage(path,level):
     print(oslideimg.level_dimensions[1])
     print(oslideimg.level_dimensions[2])
     print(oslideimg.level_dimensions[3])
+    print(oslideimg.level_count)
+    print(level%oslideimg.level_count)
     assert (level < oslideimg.level_count), "level > level_count"
     img = oslideimg.read_region((0,0),level%oslideimg.level_count,oslideimg.level_dimensions[level])
     attr = [(oslideimg.level_dimensions[ll],oslideimg.level_downsamples[ll]) for ll in range(0,oslideimg.level_count)]
@@ -46,6 +48,17 @@ img.save('Mask054_6.tif')
 
 # LEGEND
 """
+<class 'openslide.OpenSlide'>
+(97792, 221184)
+(97792, 221184)
+(49152, 110592)
+(24576, 55296)
+(12288, 27648)
+<class 'PIL.Image.Image'>
+3584
+1536
+
+
 6 -- 
 3456
 1528
