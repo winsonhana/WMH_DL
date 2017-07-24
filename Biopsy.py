@@ -17,7 +17,7 @@ def GetImage(path,level):
     print(level%oslideimg.level_count)
     assert (level < oslideimg.level_count), "level > level_count"
     #img = oslideimg.read_region((0,0),level%oslideimg.level_count,oslideimg.level_dimensions[level])
-    img = oslideimg.read_region((0,35000),1,(25000,27000 ))
+    img = oslideimg.read_region((25000,40000),1,(7000,7000 ))
     attr = [(oslideimg.level_dimensions[ll],oslideimg.level_downsamples[ll]) for ll in range(0,oslideimg.level_count)]
     return img, attr
 
@@ -36,7 +36,7 @@ img, attr = GetImage(path,6)
 print(type(img))
 print(img.height)
 print(img.width)
-img.save('Tumor054_6.tif')
+img.save('Tumor054_1.tif')
 
 
 path = "/home/data/CAMELYON16/TrainingData/Ground_Truth/Mask/Tumor_054_Mask.tif"
@@ -44,7 +44,7 @@ img, attr = GetImage(path,6)
 print(type(img))
 print(img.height)
 print(img.width)
-img.save('Mask054_6.tif')
+img.save('Mask054_1.tif')
 
 
 # LEGEND
